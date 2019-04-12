@@ -2,6 +2,8 @@ package com.igor.test.addressbook;
 
 
 import java.util.concurrent.TimeUnit;
+
+import org.junit.Before;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
@@ -21,10 +23,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
       driver = new FirefoxDriver();
       baseUrl = "https://www.katalon.com/";
       driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
-
-    @Test
-    public void testUntitledTestCase() throws Exception {
       driver.get("http://localhost/addressbook/group.php");
       driver.findElement(By.name("user")).clear();
       driver.findElement(By.name("user")).sendKeys("admin");
@@ -33,6 +31,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
       driver.findElement(By.name("pass")).sendKeys("secret");
       driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/following::input[2]")).click();
       driver.findElement(By.linkText("groups")).click();
+    }
+
+    @Test
+    public void testGroupCreation() throws Exception {
+
       driver.findElement(By.name("new")).click();
       driver.findElement(By.name("group_name")).click();
       driver.findElement(By.name("group_name")).clear();
