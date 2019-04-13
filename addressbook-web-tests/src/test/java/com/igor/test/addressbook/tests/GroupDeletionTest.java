@@ -1,4 +1,4 @@
-package com.igor.test.addressbook;
+package com.igor.test.addressbook.tests;
 
 import org.testng.annotations.Test;
 
@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 
     @Test
     public void testGroupDeletion() throws Exception {
-      goToGroupPage("groups");
-      selectGroup();
-      deleteGroups();
-      goToGroupPage("group page");
+      app.goToGroupPage("groups");
+      app.selectGroup();
+      app.deleteGroups();
+      app.goToGroupPage("group page");
     }
 
   }

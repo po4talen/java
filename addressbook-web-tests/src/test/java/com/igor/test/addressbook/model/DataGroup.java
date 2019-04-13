@@ -1,4 +1,4 @@
-package com.igor.test.addressbook;
+package com.igor.test.addressbook.model;
 
 public class DataGroup {
   private final String name;
